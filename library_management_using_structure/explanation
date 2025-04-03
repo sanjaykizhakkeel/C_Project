@@ -1,1 +1,22 @@
+Library Management System
+This is a simple command-line-based Library Management System written in C.
+It allows users to manage a collection of books by displaying available books, adding new books, borrowing books, and exiting the program.
+The program uses dynamic memory allocation to store book data and provides a basic menu-driven interface.
 
+Features
+Display Available Books: Shows a list of all books currently available in the library.
+Add New Book: Allows the user to add one or more books to the library by specifying their names.
+Borrow Book: Enables the user to borrow a book by entering its name, removing it from the library's list.
+Exit: Terminates the program and frees allocated memory.
+
+How It Works
+The program uses a struct library (typedef'd as lib) to store book names as character arrays.
+A dynamic array of lib structures is maintained using malloc and realloc to handle a variable number of books.
+The main loop presents a menu with four options, and the user interacts with the system by entering numbers and text input.
+Memory is managed manually, with free called before exiting to prevent memory leaks.
+
+Functions
+display(lib* data, int n): Displays all available books or a message if the library is empty.
+add(lib** data, int* n): Adds new books by resizing the dynamic array and taking user input for book names.
+borrow(lib* data, int* n): Searches for a book by name, removes it from the list if found, and adjusts the array.
+end(): Prints an exit message when the user chooses to leave the program.
